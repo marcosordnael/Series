@@ -9,7 +9,7 @@ function carregarFavoritos() {
     } else {
         listaFavoritos.innerHTML = favoritos.map(serie => `
             <div class="serie-item">
-                <h3>${serie.name}</h3>
+                
                 <img src="${serie.image ? serie.image.medium : ''}" alt="${serie.name}">
                 <button onclick="removerDosFavoritos(${serie.id})">Remover dos Favoritos</button>
             </div>
