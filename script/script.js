@@ -285,14 +285,20 @@ async function carregarSeriesPopulares() {
 entradaBusca.addEventListener("keypress", (event) => {
     if (event.key === "Enter") {
         buscarSeries();
+        consolelog("clicado")
     }
 });
 
 // Fechar modal de detalhes
 fecharModal.addEventListener("click", () => { modalDetalhes.style.display = "none"; });
 
+
 // Exibir busca ao clicar na lupa
-iconeLupa.addEventListener('click', () => barraBusca.classList.toggle('visible'));
+iconeLupa.addEventListener('click', () => barraBusca.classList.toggle('visivel'));
+
+botaoBusca.addEventListener('click',() => serieGeral.classList.toggle('visivel'));
+
+
 
 // Evento de busca ao clicar no botão
 botaoBusca.addEventListener("click", buscarSeries);

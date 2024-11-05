@@ -562,24 +562,24 @@ h2 {
         background-color: #333;
         padding: 10px 0;
         z-index: 1000;
-
     }
-
+    
     .nav-mobile a {
         flex: 1;
-        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         color: white;
-        padding: 10px 0;
         text-decoration: none;
     }
-
+    
     .nav-mobile img {
         width: 24px;
         height: 24px;
-        /* filter: invert(100%);  */
         display: block;
-        margin: 0 auto;
+        margin: 0;
     }
+    
 
     .filtro-genero {
         display: none;

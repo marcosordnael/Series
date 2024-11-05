@@ -5,7 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Séries</title>
+    
     <link rel="stylesheet" href="./css/styles.css">
+
+    <link rel="shortcut icon" href="/imagens/favicon.png" type="image/x-icon">
 </head>
 
 <body>
@@ -19,7 +22,7 @@
             <a href="#lista-series">Séries</a>
             <a href="favoritos.html">Favoritos</a>
 
-            <div class="filtro-genero">
+            <div id="filtro-genero" class="filtro-genero">
                 <img src="imagens/icon-filtro.png" alt="Filtrar Gênero" class="icone-filtro">
                 <div class="janela-generos">
                     <ul id="filtro-genero">
@@ -43,23 +46,28 @@
             <div class="nav-mobile">
                 <a href="index.html" title="Início"><img src="imagens/icons8-casa-branca-24.png" alt="Início"></a>
 
-                <a href="section.serie-geral-mobile" title="Séries"><img src="imagens/icons8-filme-24.png" alt="Séries"></a>
+                <a href="#todas-series" title="Séries"><img src="imagens/icons8-filme-24.png" alt="Séries"></a>
 
                 <a href="favoritos.html" title="Favoritos"><img src="imagens/icons8-favorito-24.png" alt="Favoritos"></a>
 
-                <div class="filtro-genero-mobile">
-                    <img src="imagens/icon-filtro.png" alt="Filtrar Gênero" class="icone-filtro">
-                    <div class="janela-generos">
-                        <ul>
-                            <li onclick="filtrarGenero('Drama')">Drama</li>
-                            <li onclick="filtrarGenero('Comedy')">Comédia</li>
-                            <li onclick="filtrarGenero('Action')">Ação</li>
-                            <li onclick="filtrarGenero('Horror')">Terror</li>
-                            <li onclick="filtrarGenero('Romance')">Romance</li>
-                            <li onclick="filtrarGenero('Adventure')">Aventura</li>
-                        </ul>
+                <a href="#filtro-genero">
+                    <div class="filtro-genero-mobile">
+                        <img src="imagens/icon-filtro.png" alt="Filtrar Gênero" class="icone-filtro">
+                        <div class="filtro-genero">
+                            <img src="imagens/icon-filtro.png" alt="Filtrar Gênero" class="icone-filtro">
+                            <div class="janela-generos">
+                                <ul id="filtro-genero">
+                                    <li onclick="filtrarGenero('Drama')">Drama</li>
+                                        <li onclick="filtrarGenero('Comedy')">Comédia</li>
+                                        <li onclick="filtrarGenero('Action')">Ação</li>
+                                        <li onclick="filtrarGenero('Horror')">Terror</li>
+                                        <li onclick="filtrarGenero('Romance')">Romance</li>
+                                        <li onclick="filtrarGenero('Adventure')">Aventura</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                </a>
 
                 <a href="#" id="icone-lupa" title="Pesquisar">
                     <img src="imagens/icons8-pesquisar-24.png" alt="Pesquisar">
@@ -113,7 +121,7 @@
                 <h2>Todas as Séries</h2>
                 <div class="container-carrossel-genero">
                     <button class="botao-carrossel-genero botao-esquerdo-genero" onclick="deslizarCarrossel(this, -1)">&#10094;</button>
-                    <div class="lista-series-populares lista-series-genero"></div>
+                    <div id="todas-series" class="lista-series-populares lista-series-genero"></div>
                     <button class="botao-carrossel-genero botao-direito-genero" onclick="deslizarCarrossel(this, 1)">&#10095;</button>
                 </div>
             </section>
