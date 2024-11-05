@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Séries</title>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
+    <div id="notificacao" class="notificacao"></div>
+    <header id="header">
+
+        <nav>
+            <h1>Séries</h1>
+
+            <a href="index.html">Início</a>
+            <a href="#lista-series">Séries</a>
+            <a href="favoritos.html">Favoritos</a>
+
+            <div class="filtro-genero">
+                <img src="imagens/icon-filtro.png" alt="Filtrar Gênero" class="icone-filtro">
+                <div class="janela-generos">
+                    <ul id="filtro-genero">
+                        <li onclick="filtrarGenero('Drama')">Drama</li>
+                            <li onclick="filtrarGenero('Comedy')">Comédia</li>
+                            <li onclick="filtrarGenero('Action')">Ação</li>
+                            <li onclick="filtrarGenero('Horror')">Terror</li>
+                            <li onclick="filtrarGenero('Romance')">Romance</li>
+                            <li onclick="filtrarGenero('Adventure')">Aventura</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="barra-busca">
+                <input type="text" id="entrada-busca" placeholder="Buscar séries...">
+                <button id="botao-busca">Buscar</button>
+            </div>
+        </nav>
+
+        <div class="mobile">
+            <div class="nav-mobile">
+                <a href="index.html" title="Início"><img src="imagens/icons8-casa-branca-24.png" alt="Início"></a>
+
+                <a href="section.serie-geral-mobile" title="Séries"><img src="imagens/icons8-filme-24.png" alt="Séries"></a>
+
+                <a href="favoritos.html" title="Favoritos"><img src="imagens/icons8-favorito-24.png" alt="Favoritos"></a>
+
+                <div class="filtro-genero-mobile">
+                    <img src="imagens/icon-filtro.png" alt="Filtrar Gênero" class="icone-filtro">
+                    <div class="janela-generos">
+                        <ul>
+                            <li onclick="filtrarGenero('Drama')">Drama</li>
+                            <li onclick="filtrarGenero('Comedy')">Comédia</li>
+                            <li onclick="filtrarGenero('Action')">Ação</li>
+                            <li onclick="filtrarGenero('Horror')">Terror</li>
+                            <li onclick="filtrarGenero('Romance')">Romance</li>
+                            <li onclick="filtrarGenero('Adventure')">Aventura</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <a href="#" id="icone-lupa" title="Pesquisar">
+                    <img src="imagens/icons8-pesquisar-24.png" alt="Pesquisar">
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main id="conteudo-principal">
+        <section class="display">
+            <div class="container-carrossel">
+                <div class="carrossel">
+                    <div class="carrossel-item">
+                        <img src="imagens/la-casa-de-papel.webp" alt="La Casa de Papel">
+                    </div>
+                    <div class="carrossel-item">
+                        <img src="imagens/Dark-Netflix.jpg" alt="Imagem 2">
+                    </div>
+                    <div class="carrossel-item">
+                        <img src="imagens/greys-anatomy.jpeg" alt="Imagem 3">
+                    </div>
+                </div>
+            </div>
+            <ul class="indicadores">
+                <li class="ativo"></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </section>
+
+        <section id="exibir-api">
+            <h2>Drama</h2>
+            <div class="carrossel-genero">
+                <div class="container-carrossel-genero">
+                    <button class="botao-carrossel-genero botao-esquerdo-genero" onclick="deslizarCarrossel(this, -1)">&#10094;</button>
+                    <div class="lista-series-genero"></div>
+                    <button class="botao-carrossel-genero botao-direito-genero" onclick="deslizarCarrossel(this, 1)">&#10095;</button>
+                </div>
+            </div>
+
+            <h2>Comédia</h2>
+            <div class="carrossel-genero">
+                <div class="container-carrossel-genero">
+                    <button class="botao-carrossel-genero botao-esquerdo-genero" onclick="deslizarCarrossel(this, -1)">&#10094;</button>
+                    <div class="lista-series-genero"></div>
+                    <button class="botao-carrossel-genero botao-direito-genero" onclick="deslizarCarrossel(this, 1)">&#10095;</button>
+                </div>
+            </div>
+
+            <section class="serie-geral-mobile">
+                <h2>Todas as Séries</h2>
+                <div class="container-carrossel-genero">
+                    <button class="botao-carrossel-genero botao-esquerdo-genero" onclick="deslizarCarrossel(this, -1)">&#10094;</button>
+                    <div class="lista-series-populares lista-series-genero"></div>
+                    <button class="botao-carrossel-genero botao-direito-genero" onclick="deslizarCarrossel(this, 1)">&#10095;</button>
+                </div>
+            </section>
+        </section>
+
+        <section id="serie-geral" class="serie-geral">
+            <h2>Séries Populares</h2>
+            <ul id="lista-series"></ul>
+            <div id="loading-spinner" class="spinner"></div>
+            <p id="mensagem-erro" class="erro"></p>
+        </section>
+
+        <div id="modal-detalhes" class="modal">
+            <div class="conteudo-modal">
+                <button class="fechar" id="fechar-modal">X</button>
+                <div id="detalhes-serie">
+                    <h2 id="serie-nome"></h2>
+                    <img id="serie-imagem" alt="">
+                    <p><strong>Idioma:</strong> <span id="serie-idioma"></span></p>
+                    <p><strong>Gêneros:</strong> <span id="serie-generos"></span></p>
+                    <p><strong>Descrição:</strong> <span id="serie-descricao"></span></p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="/script/script.js"></script>
+
+    
+</body>
+
+</html>
