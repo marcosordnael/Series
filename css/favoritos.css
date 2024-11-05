@@ -5,7 +5,6 @@
     box-sizing: border-box;
 }
 
-
 body {
     font-family: Arial, sans-serif;
     background-color: #141414;
@@ -15,25 +14,15 @@ body {
 
 /* Configurações do cabeçalho */
 header {
-    background-color: #14141410;
+    background-color: rgba(20, 20, 20, 0.9);
     position: fixed;
     width: 100%;
     z-index: 99;
     transition: background-color 0.3s ease;
-}
-
-
-header h1 {
-    font-size: 2rem;
-    color: #e50914;
-    font-weight: bold;
-}
-
-header nav {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 1rem 2rem;
+    align-items: center; 
+    justify-content: space-around; 
+    padding: 10px 20px;
 }
 
 header.nav-scroll {
@@ -41,10 +30,23 @@ header.nav-scroll {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+    color: #e50914;
+    font-weight: bold;
+}
+
+header nav {
+    display: flex;
+    gap: 20px; 
+}
+
 header nav a {
     color: #e5e5e5;
     text-decoration: none;
     font-weight: bold;
+    padding: 10px;
 }
 
 header nav a:hover {
@@ -53,96 +55,15 @@ header nav a:hover {
 }
 
 
-/* Config filtro */
-.filtro-genero {
-    position: relative;
-    display: inline-block;
-    cursor: pointer;
-}
-
-.icone-filtro {
-    width: 32px;
-    height: 32px;
-}
-
-
-/* Janela flutuante */
-.janela-generos {
-    display: none; 
-    position: absolute;
-    top: 25px; 
-    left: -80px;
-    background-color: rgba(24, 22, 22, 0.788);
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-    z-index: 1000;
-    padding: 10px;
-    width: auto; 
-}
-
-
-.filtro-genero:hover .janela-generos {
-    display: block;
-}
-
-
-.janela-generos ul {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); 
-    gap: 10px; 
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-
-.janela-generos li {
-    padding: 8px;
-    cursor: pointer;
+main {
     text-align: center;
-    color: #000;
-    background-color: #f9f9f9;
-    border-radius: 4px;
-    transition: background-color 0.2s;
+    padding-top: 80px;
 }
-
-.janela-generos li:hover {
-    background-color: #e0e0e0;
-}
-
-/* Config buscar */
-.barra-busca {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.barra-busca input {
-    padding: 0.7rem;
-    font-size: 1rem;
-    border: none;
-    border-radius: 4px;
-    outline: none;
-}
-
-.barra-busca button {
-    background-color: #e50914;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    padding: 0.7rem 1rem;
-    font-size: 1rem;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-
 
 /* Espaço entre os elementos e seção de exibição */
-#lista-favoritos{
+#lista-favoritos {
+    padding: 80px 20px 20px;
     width: 100%;
-    height: 100%;
-    
 }
 
 /* Grade de séries */
@@ -150,18 +71,15 @@ header nav a:hover {
     display: flex;
     flex-wrap: wrap;
     gap: 1.5rem;
-    padding: 1rem 2rem;
     justify-content: center;
+    padding: 1rem 0;
 }
 
 /* Item de série */
 .serie-item {
-    margin-top: 80px;
-    
     border-radius: 8px;
     overflow: hidden;
-    min-width: 210px;
-    max-width: 210px;
+    width: 210px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
@@ -173,7 +91,7 @@ header nav a:hover {
 }
 
 .serie-item img {
-    width: 210px;
+    width: 100%;
     border-radius: 8px 8px 0 0;
 }
 
@@ -203,14 +121,13 @@ button:hover {
     transform: scale(1.05);
 }
 
-.nav-mobile{
+/* Menu de navegação para dispositivos móveis */
+.nav-mobile {
     display: none;
 }
 
 /* Ajustes responsivos */
-
 @media (max-width: 768px) {
-
     .serie-geral {
         display: none;
     }
@@ -223,35 +140,9 @@ button:hover {
         display: none;
     }
 
-    
-
     .barra-busca.visivel {
         position: fixed;
         display: flex; 
-        
-    }
-
-    .janelaBuscar {
-        display: none;
-        margin-top: -20px;
-        padding: 20px;
-        width: 100vw;
-        text-align: center;
-        background-color: #141414;
-    }
-
-    .janelaBuscar input {
-        padding: 10px;
-        margin: 10px;
-    }
-
-    .janelaBuscar button {
-        padding: 10px;
-        font-weight: 600;
-    }
-
-    .display {
-        margin-top: 30px;
     }
 
     .nav-mobile {
@@ -279,48 +170,6 @@ button:hover {
     .nav-mobile img {
         width: 24px;
         height: 24px;
-        display: block;
-        margin: 0;
-    }
-    
-
-    .filtro-genero {
-        display: none;
-    }
-
-   
-    #exibir-api h2{
-        text-align: center;
-    }
-
-    .serie-geral h2 {
-        text-align: center;
-    }
-
-    h3,h4 {
-        display: none;
-    }
-
-    .serie-item {
-        text-align: center;
-    }
-    
-    .serie-imagem {
-        max-width: 100px; /* Largura máxima para telas menores */
-    }
-
-    .carrossel-item-genero {
-        width: 100%;
-        text-align: center;
-    }
-
-
-    .botao-carrossel-genero {
-        display: none;
-    }
-
-    .serie-geral-mobile {
-        margin-bottom: 50px;
         display: block;
     }
 }

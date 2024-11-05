@@ -17,6 +17,12 @@ function carregarFavoritos() {
     }
 }
 
+// Ajusta o cabeçalho ao rolar a página
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 0) header.classList.add('nav-scroll');
+    else header.classList.remove('nav-scroll');
+});
+
 // Função para remover uma série dos favoritos
 function removerDosFavoritos(id) {
     let favoritos = JSON.parse(localStorage.getItem("favoritas")) || [];
