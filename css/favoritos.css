@@ -68,11 +68,11 @@ main {
 
 /* Grade de séries */
 .grade-series {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Define colunas responsivas */
+    gap: 1.5rem; /* Espaço entre os itens */
+    padding: 1rem 2rem;
     justify-content: center;
-    padding: 1rem 0;
 }
 
 /* Item de série */
@@ -135,14 +135,8 @@ button:hover {
         display: block;
     }
     
-    nav a,
-    .barra-busca {
-        display: none;
-    }
-
-    .barra-busca.visivel {
-        position: fixed;
-        display: flex; 
+    .grade-series {
+        grid-template-columns: repeat(2, 1fr); /* Muda para duas colunas */
     }
 
     .nav-mobile {
