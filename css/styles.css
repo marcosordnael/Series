@@ -533,9 +533,13 @@ h2 {
     .janela-generos {
         display: none;
         position: fixed;
-        top: 500px;
+        justify-content: center;
+        justify-items: center;
+        top: 520px;
+        bottom: 0px;
         right: 10px;
         left: 10px;
+        
     }
 
     .janela-generos.visivel {
@@ -545,7 +549,7 @@ h2 {
     .barra-busca.visivel {
         position: fixed;
         display: flex; 
-        
+        margin-top: 25px;        
     }
 
     .janelaBuscar {
@@ -610,6 +614,8 @@ h2 {
 
     .filtro-genero {
         display: block;
+        
+
     }
 
    
