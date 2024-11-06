@@ -25,7 +25,7 @@
             <div id="filtro-genero" class="filtro-genero">
                 <img src="imagens/icon-filtro.png" alt="Filtrar Gênero" class="icone-filtro">
                 <div class="janela-generos">
-                    <ul id="filtro-genero">
+                    <ul id="selecionar-genero">
                         <li onclick="filtrarGenero('Drama')">Drama</li>
                             <li onclick="filtrarGenero('Comedy')">Comédia</li>
                             <li onclick="filtrarGenero('Action')">Ação</li>
@@ -50,22 +50,10 @@
 
                 <a href="favoritos.html" title="Favoritos"><img src="imagens/icons8-favorito-24.png" alt="Favoritos"></a>
 
-                <a href="#filtro-genero">
+                <a href="#filtro-genero" id="ico-filtro">
                     <div class="filtro-genero-mobile">
-                        <img src="imagens/icon-filtro.png" alt="Filtrar Gênero" class="icone-filtro">
-                        <div class="filtro-genero">
-                            <img src="imagens/icon-filtro.png" alt="Filtrar Gênero" class="icone-filtro">
-                            <div class="janela-generos">
-                                <ul id="filtro-genero">
-                                    <li onclick="filtrarGenero('Drama')">Drama</li>
-                                        <li onclick="filtrarGenero('Comedy')">Comédia</li>
-                                        <li onclick="filtrarGenero('Action')">Ação</li>
-                                        <li onclick="filtrarGenero('Horror')">Terror</li>
-                                        <li onclick="filtrarGenero('Romance')">Romance</li>
-                                        <li onclick="filtrarGenero('Adventure')">Aventura</li>
-                                </ul>
-                            </div>
-                        </div>
+                        <img src="imagens/icon-filtro.png" alt="Filtrar Gênero" class="icone-filtro-mobile" id="icone-filtro-mobile">
+                        
                     </div>
                 </a>
 
@@ -129,7 +117,7 @@
         </section>
 
         <section id="serie-geral" class="serie-geral">
-            <h2>Séries Populares</h2>
+            <h2>Resultado da sua pesquisa</h2>
             <ul id="lista-series"></ul>
             <div id="loading-spinner" class="spinner"></div>
             <p id="mensagem-erro" class="erro"></p>

@@ -16,6 +16,7 @@ body {
 header {
     background-color: rgba(20, 20, 20, 0.9);
     position: fixed;
+    top: -5px;
     width: 100%;
     z-index: 99;
     transition: background-color 0.3s ease;
@@ -23,6 +24,7 @@ header {
     align-items: center; 
     justify-content: space-around; 
     padding: 10px 20px;
+    
 }
 
 header.nav-scroll {
@@ -130,6 +132,7 @@ button:hover {
 
 /* Ajustes responsivos */
 @media (max-width: 768px) {
+
     .serie-geral {
         display: none;
     }

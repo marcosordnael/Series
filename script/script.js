@@ -2,6 +2,9 @@
 const entradaBusca = document.getElementById("entrada-busca");
 const botaoBusca = document.getElementById("botao-busca");
 const iconeLupa = document.getElementById('icone-lupa');
+const iconeFiltro = document.getElementById('ico-filtro');
+const janelaGenero = document.querySelector('.janela-generos');
+const selecionarGenero = document.getElementById('selecionar-genero')
 const barraBusca = document.querySelector('.barra-busca');
 const serieGeral = document.querySelector('.serie-geral');
 const listaSeries = document.getElementById("lista-series");
@@ -292,11 +295,24 @@ entradaBusca.addEventListener("keypress", (event) => {
 // Fechar modal de detalhes
 fecharModal.addEventListener("click", () => { modalDetalhes.style.display = "none"; });
 
+//Exibir filtro
+iconeFiltro.addEventListener('click', () => janelaGenero.classList.toggle('visivel'));
 
 // Exibir busca ao clicar na lupa
 iconeLupa.addEventListener('click', () => barraBusca.classList.toggle('visivel'));
 
 botaoBusca.addEventListener('click',() => serieGeral.classList.toggle('visivel'));
+
+selecionarGenero.addEventListener('click', () => {
+    serieGeral.classList.toggle('visivel');
+    
+    if (serieGeral.classList.contains('visivel')) {
+        janelaGenero.classList.remove('visivel');
+        serieGeral.scrollIntoView({ behavior: 'smooth' });
+    }
+});
+
+
 
 
 

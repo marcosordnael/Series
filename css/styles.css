@@ -514,13 +514,33 @@ h2 {
     .serie-geral.visivel {
         display: block;
     }
-    
-    nav a,
-    .barra-busca {
-        display: none;
+    header.nav-scroll {
+        background-color: transparent;
+        box-shadow: none;
     }
 
-    
+    nav a, h1,
+    .barra-busca {
+
+        display: none;
+        
+    }
+
+    .nav-mobile {
+        height:50px;
+    }
+
+    .janela-generos {
+        display: none;
+        position: fixed;
+        top: 500px;
+        right: 10px;
+        left: 10px;
+    }
+
+    .janela-generos.visivel {
+        display: block;
+    }
 
     .barra-busca.visivel {
         position: fixed;
@@ -579,10 +599,17 @@ h2 {
         display: block;
         margin: 0;
     }
+
+    nav {
+        display: none;
+    }
     
+    img.icone-filtro {
+        display: none;
+    }
 
     .filtro-genero {
-        display: none;
+        display: block;
     }
 
    
