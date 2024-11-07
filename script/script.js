@@ -46,7 +46,7 @@ function mostrarItem(indice) {
 }
 
 // Intervalo automático para o carrossel
-setInterval(() => mostrarItem(indiceAtual + 1), 5000);
+setInterval(() => mostrarItem(indiceAtual + 1), 3000);
 
 // Evento de clique nos indicadores do carrossel
 indicadores.forEach((indicador, i) => indicador.addEventListener('click', () => mostrarItem(i)));
@@ -90,7 +90,8 @@ function exibirSeriesPopulares(series) {
             <h4>${serie.name}</h4>
             <img src="${serie.image ? serie.image.medium : ''}" alt="${serie.name}">
             <div class="btn-container">
-                <button class="favoritar ${favoritado ? 'favoritado btn-remover' : 'btn-adicionar'}" onclick='alternarFavorito(${serie.id})'>
+                <button class="favoritar ${favoritado ? 'favoritado btn-remover' : 'btn-adicionar'}" data-id="${serie.id}" onclick='alternarFavorito(${serie.id})'>
+
                     ${favoritado ? 'Remover dos Favoritos' : 'Adicionar aos Favoritos'}
                 </button>
                 <button class="btn-detalhes" onclick="exibirDetalhesSerie(${serie.id})">Ver detalhes</button>
@@ -114,7 +115,9 @@ async function carregarSeries() {
         const resposta = await fetch("https://api.tvmaze.com/shows");
         if (!resposta.ok) throw new Error("Erro ao carregar séries");
 
-        seriesPopulares = await resposta.json();
+        const jsonResponse = await resposta.json();
+        seriesPopulares = jsonResponse || [];
+
         exibirSeriesDrama(seriesPopulares);
         exibirSeriesComedia(seriesPopulares);
         exibirSeriesPopulares(seriesPopulares);
@@ -145,7 +148,7 @@ function alternarFavorito(id) {
     if (serie) {
         const index = seriesFavoritas.findIndex(fav => fav.id === id);
 
-        
+
         if (index === -1) {
             adicionarAosFavoritos(serie);
             exibirNotificacao('Adicionado aos Favoritos com sucesso!', false);
@@ -154,7 +157,7 @@ function alternarFavorito(id) {
             exibirNotificacao('Removido dos Favoritos com sucesso!', true);
         }
 
-        
+
         const botoesFavoritar = document.querySelectorAll(`button[onclick='alternarFavorito(${id})']`);
         botoesFavoritar.forEach(botaoFavoritar => {
             if (index === -1) {
@@ -185,10 +188,15 @@ function exibirNotificacao(mensagem, erro) {
     }, 2000);
 }
 
-// Função para filtrar e exibir séries por gênero
+// Função para filtrar e exibir séries por gênero e fechar a janela de seleção
 function filtrarGenero(genero) {
     const seriesFiltradas = seriesPopulares.filter(serie => serie.genres.includes(genero));
     exibirSeries(seriesFiltradas);
+
+    // Esconder a janela de seleção de gênero
+    janelaGenero.classList.remove('visivel');
+
+    // Rolar a página até a seção de séries
     const section = document.getElementById('serie-geral');
     section.scrollIntoView({ behavior: 'smooth' });
 }
@@ -228,14 +236,14 @@ async function exibirDetalhesSerie(id) {
         const serieGeneros = document.getElementById('serie-generos');
         const serieDescricao = document.getElementById('serie-descricao');
 
-        
+
         serieNome.textContent = serie.name;
         serieImagem.src = serie.image ? serie.image.medium : '';
         serieIdioma.textContent = serie.language;
         serieGeneros.textContent = serie.genres.join(", ");
         serieDescricao.innerHTML = serie.summary || "Sem descrição disponível.";
 
-        
+
         modalDetalhes.style.display = "block";
     } catch (erro) {
         exibirErro(erro.message);
@@ -248,6 +256,7 @@ async function exibirDetalhesSerie(id) {
 // Função para exibir a lista de séries
 function exibirSeries(series) {
     listaSeries.innerHTML = "";
+
     series.forEach(serie => {
         const favoritado = seriesFavoritas.some(fav => fav.id === serie.id);
         const serieItem = document.createElement("div");
@@ -263,32 +272,17 @@ function exibirSeries(series) {
             </div>
         `;
         listaSeries.appendChild(serieItem);
-        
+
     });
 }
 
-// Função para carregar séries populares
-async function carregarSeriesPopulares() {
-    try {
-        mostrarSpinner();
-        const resposta = await fetch("https://api.tvmaze.com/shows");
-        if (!resposta.ok) throw new Error("Erro ao carregar séries populares");
-
-        seriesPopulares = await resposta.json();
-        exibirSeries(seriesPopulares);
-    } catch (erro) {
-        exibirErro(erro.message);
-    } finally {
-        esconderSpinner();
-    }
-}
 
 
 
 entradaBusca.addEventListener("keypress", (event) => {
     if (event.key === "Enter") {
         buscarSeries();
-        consolelog("clicado")
+
     }
 });
 
@@ -301,7 +295,11 @@ iconeFiltro.addEventListener('click', () => janelaGenero.classList.toggle('visiv
 // Exibir busca ao clicar na lupa
 iconeLupa.addEventListener('click', () => barraBusca.classList.toggle('visivel'));
 
-botaoBusca.addEventListener('click',() => serieGeral.classList.toggle('visivel'));
+botaoBusca.addEventListener('click', () => {
+    serieGeral.classList.toggle('visivel');
+    buscarSeries();
+});
+
 
 selecionarGenero.addEventListener('click', () => {
     serieGeral.classList.toggle('visivel');
@@ -310,16 +308,17 @@ selecionarGenero.addEventListener('click', () => {
         janelaGenero.classList.remove('visivel');
         serieGeral.scrollIntoView({ behavior: 'smooth' });
     }
+
+    // Fecha a janela de gênero após selecionar o gênero
+    janelaGenero.classList.remove('visivel');
 });
 
 
 
 
 
-// Evento de busca ao clicar no botão
-botaoBusca.addEventListener("click", buscarSeries);
-
 // Carregar séries ao iniciar
 carregarSeries();
 
-window.addEventListener("load", carregarSeriesPopulares);
+
+

@@ -254,7 +254,7 @@ header nav a:hover {
 }
 
 .carrossel-item-genero {
-    width: 100px;
+    width: 100%;
     text-align: center;
 
 }
@@ -498,12 +498,13 @@ h2 {
     display: none;
     
 }
-.serie-geral-mobile {
+.serie-geral {
     display: none;
-    
 }
 
-
+.serie-geral.visivel {
+    display: block;
+}
 
 @media (max-width: 768px) {
 
