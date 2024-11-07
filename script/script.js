@@ -188,15 +188,10 @@ function exibirNotificacao(mensagem, erro) {
     }, 2000);
 }
 
-// Função para filtrar e exibir séries por gênero e fechar a janela de seleção
+// Função para filtrar e exibir séries por gênero
 function filtrarGenero(genero) {
     const seriesFiltradas = seriesPopulares.filter(serie => serie.genres.includes(genero));
     exibirSeries(seriesFiltradas);
-
-    // Esconder a janela de seleção de gênero
-    janelaGenero.classList.remove('visivel');
-
-    // Rolar a página até a seção de séries
     const section = document.getElementById('serie-geral');
     section.scrollIntoView({ behavior: 'smooth' });
 }
@@ -303,14 +298,10 @@ botaoBusca.addEventListener('click', () => {
 
 selecionarGenero.addEventListener('click', () => {
     serieGeral.classList.toggle('visivel');
-    
     if (serieGeral.classList.contains('visivel')) {
         janelaGenero.classList.remove('visivel');
         serieGeral.scrollIntoView({ behavior: 'smooth' });
     }
-
-    // Fecha a janela de gênero após selecionar o gênero
-    janelaGenero.classList.remove('visivel');
 });
 
 
