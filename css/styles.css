@@ -7,8 +7,8 @@
 
 
 body {
-    
-    font-family: Arial, sans-serif;
+
+    font-family:  "Roboto",Arial, sans-serif;
     background-color: #141414;
     color: #e5e5e5;
     overflow-x: hidden;
@@ -25,6 +25,7 @@ header {
 
 
 header h1 {
+    font-family: 'Bebas Neue', sans-serif;
     font-size: 2rem;
     color: #e50914;
     font-weight: bold;
@@ -69,16 +70,16 @@ header nav a:hover {
 
 /* Janela flutuante */
 .janela-generos {
-    display: none; 
+    display: none;
     position: absolute;
-    top: 25px; 
+    top: 25px;
     left: -80px;
     background-color: rgba(24, 22, 22, 0.788);
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     z-index: 1000;
     padding: 10px;
-    width: auto; 
+    width: auto;
 }
 
 
@@ -89,8 +90,8 @@ header nav a:hover {
 
 .janela-generos ul {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); 
-    gap: 10px; 
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
     list-style: none;
     padding: 0;
     margin: 0;
@@ -314,7 +315,7 @@ h2 {
     margin-top: 20px;
     display: flex;
     flex-wrap: wrap;
-    gap:1rem;
+    gap: 1rem;
     justify-content: center;
 
 }
@@ -328,7 +329,8 @@ h2 {
 }
 
 
-.serie-item h3,h4 {
+.serie-item h3,
+h4 {
     display: none;
     text-align: center;
     font-size: 1.1rem;
@@ -338,34 +340,35 @@ h2 {
 
 .serie-imagem {
     width: 100%;
-    max-width: 210px; 
-    height: auto; 
+    max-width: 210px;
+    height: auto;
 }
 
 .btn-container {
-    width: 100%; 
+    width: 100%;
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     gap: 5px;
     align-items: center;
-    
+
 }
 
 /* Estilo base para os botões */
-.favoritar, .btn-detalhes {
-    width: 100%; 
-    padding: 10px; 
+.favoritar,
+.btn-detalhes {
+    width: 100%;
+    padding: 10px;
     font-size: 14px;
     border: none;
     cursor: pointer;
     transition: background-color 0.3s ease;
     text-align: center;
-    
+
 }
 
 .btn-detalhes {
     color: white;
-    background: linear-gradient(to bottom, #1a1a1a, #000000 );
+    background: linear-gradient(to bottom, #1a1a1a, #000000);
     transition: transform 0.3s;
 }
 
@@ -386,8 +389,8 @@ h2 {
 }
 
 .btn-adicionar:hover {
-    background: linear-gradient(to bottom, #28a428, #1e5b1e); 
-    transform: scale(1.05); 
+    background: linear-gradient(to bottom, #28a428, #1e5b1e);
+    transform: scale(1.05);
 }
 
 
@@ -398,18 +401,21 @@ h2 {
 }
 
 .btn-remover:hover {
-    background: linear-gradient(to bottom, #ff1c1c, #e50914); /* Cores mais intensas no hover */
+    background: linear-gradient(to bottom, #ff1c1c, #e50914);
+    /* Cores mais intensas no hover */
     transform: scale(1.05);
 }
 
 /* Botão "Ver detalhes" */
 .detalhes {
-    background-color: #333; /* Cor neutra para detalhes */
+    background-color: #333;
+    /* Cor neutra para detalhes */
     color: #fff;
 }
 
 .detalhes:hover {
-    background-color: #555; /* Escurecer ao passar o mouse */
+    background-color: #555;
+    /* Escurecer ao passar o mouse */
 }
 
 
@@ -464,12 +470,12 @@ h2 {
     border-radius: 8px;
     color: #fff;
     position: relative;
-    
+
     margin: 30px auto;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5); 
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
 }
 
-#detalhes-serie h2{
+#detalhes-serie h2 {
     padding: 10px;
 }
 
@@ -510,7 +516,10 @@ h2 {
 /* Mobile */
 .nav-mobile {
     display: none;
-    
+
+}
+h2 {
+    text-align: center;
 }
 .serie-geral {
     display: none;
@@ -525,23 +534,26 @@ h2 {
     .serie-geral {
         display: none;
     }
+
     .serie-geral.visivel {
         display: block;
     }
+
     header.nav-scroll {
         background-color: transparent;
         box-shadow: none;
     }
 
-    nav a, h1,
+    nav a,
+    h1,
     .barra-busca {
 
         display: none;
-        
+
     }
 
     .nav-mobile {
-        height:50px;
+        height: 50px;
     }
 
     .janela-generos {
@@ -553,7 +565,7 @@ h2 {
         bottom: 0px;
         right: 10px;
         left: 10px;
-        
+
     }
 
     .janela-generos.visivel {
@@ -562,8 +574,8 @@ h2 {
 
     .barra-busca.visivel {
         position: fixed;
-        display: flex; 
-        margin-top: 25px;        
+        display: flex;
+        margin-top: 25px;
     }
 
     .janelaBuscar {
@@ -601,7 +613,7 @@ h2 {
         padding: 10px 0;
         z-index: 1000;
     }
-    
+
     .nav-mobile a {
         flex: 1;
         display: flex;
@@ -610,7 +622,7 @@ h2 {
         color: white;
         text-decoration: none;
     }
-    
+
     .nav-mobile img {
         width: 24px;
         height: 24px;
@@ -621,18 +633,18 @@ h2 {
     nav {
         display: none;
     }
-    
+
     img.icone-filtro {
         display: none;
     }
 
     .filtro-genero {
         display: block;
-        
+
 
     }
-  
-    #exibir-api h2{
+
+    #exibir-api h2 {
         text-align: center;
     }
 
@@ -640,16 +652,13 @@ h2 {
         text-align: center;
     }
 
-    h3,h4 {
+    h3,
+    h4 {
         display: none;
     }
 
     .serie-item {
         text-align: center;
-    }
-    
-    .serie-imagem {
-        max-width: 100px; /* Largura máxima para telas menores */
     }
 
     .carrossel-item-genero {
@@ -662,8 +671,4 @@ h2 {
         display: none;
     }
 
-    .serie-geral-mobile {
-        margin-bottom: 50px;
-        display: block;
-    }
 }

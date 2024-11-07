@@ -4,11 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Séries</title>
-    
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="css/styles.css">
 
     <link rel="shortcut icon" href="imagens/favicon_io/favicon(1).ico" type="image/x-icon">
+
+
+    <title>Séries</title>
+
+
 </head>
 
 <body>
@@ -17,6 +29,7 @@
 
         <nav>
             <h1>Séries</h1>
+
 
             <a href="index.html">Início</a>
             <a href="#geral-series">Séries</a>
@@ -27,11 +40,11 @@
                 <div class="janela-generos">
                     <ul id="selecionar-genero">
                         <li onclick="filtrarGenero('Drama')">Drama</li>
-                            <li onclick="filtrarGenero('Comedy')">Comédia</li>
-                            <li onclick="filtrarGenero('Action')">Ação</li>
-                            <li onclick="filtrarGenero('Horror')">Terror</li>
-                            <li onclick="filtrarGenero('Romance')">Romance</li>
-                            <li onclick="filtrarGenero('Adventure')">Aventura</li>
+                        <li onclick="filtrarGenero('Comedy')">Comédia</li>
+                        <li onclick="filtrarGenero('Action')">Ação</li>
+                        <li onclick="filtrarGenero('Horror')">Terror</li>
+                        <li onclick="filtrarGenero('Romance')">Romance</li>
+                        <li onclick="filtrarGenero('Adventure')">Aventura</li>
                     </ul>
                 </div>
             </div>
@@ -48,12 +61,14 @@
 
                 <a href="#todas-series" title="Séries"><img src="imagens/icons8-filme-24.png" alt="Séries"></a>
 
-                <a href="favoritos.html" title="Favoritos"><img src="imagens/icons8-favorito-24.png" alt="Favoritos"></a>
+                <a href="favoritos.html" title="Favoritos"><img src="imagens/icons8-favorito-24.png"
+                        alt="Favoritos"></a>
 
                 <a href="#filtro-genero" id="ico-filtro">
                     <div class="filtro-genero-mobile">
-                        <img src="imagens/icon-filtro.png" alt="Filtrar Gênero" class="icone-filtro-mobile" id="icone-filtro-mobile">
-                        
+                        <img src="imagens/icon-filtro.png" alt="Filtrar Gênero" class="icone-filtro-mobile"
+                            id="icone-filtro-mobile">
+
                     </div>
                 </a>
 
@@ -65,7 +80,6 @@
     </header>
 
     <main id="conteudo-principal">
-        
         <section class="display">
             <div class="container-carrossel">
                 <div class="carrossel">
@@ -91,33 +105,39 @@
             <h2>Drama</h2>
             <div class="carrossel-genero">
                 <div class="container-carrossel-genero">
-                    <button class="botao-carrossel-genero botao-esquerdo-genero" onclick="deslizarCarrossel(this, -1)">&#10094;</button>
+                    <button class="botao-carrossel-genero botao-esquerdo-genero"
+                        onclick="deslizarCarrossel(this, -1)">&#10094;</button>
                     <div class="lista-series-genero"></div>
-                    <button class="botao-carrossel-genero botao-direito-genero" onclick="deslizarCarrossel(this, 1)">&#10095;</button>
+                    <button class="botao-carrossel-genero botao-direito-genero"
+                        onclick="deslizarCarrossel(this, 1)">&#10095;</button>
                 </div>
             </div>
 
             <h2>Comédia</h2>
             <div class="carrossel-genero">
                 <div class="container-carrossel-genero">
-                    <button class="botao-carrossel-genero botao-esquerdo-genero" onclick="deslizarCarrossel(this, -1)">&#10094;</button>
+                    <button class="botao-carrossel-genero botao-esquerdo-genero"
+                        onclick="deslizarCarrossel(this, -1)">&#10094;</button>
                     <div class="lista-series-genero"></div>
-                    <button class="botao-carrossel-genero botao-direito-genero" onclick="deslizarCarrossel(this, 1)">&#10095;</button>
+                    <button class="botao-carrossel-genero botao-direito-genero"
+                        onclick="deslizarCarrossel(this, 1)">&#10095;</button>
                 </div>
             </div>
 
             <section id="geral-series" class="serie-geral-mobile">
                 <h2>Todas as Séries</h2>
                 <div class="container-carrossel-genero">
-                    <button class="botao-carrossel-genero botao-esquerdo-genero" onclick="deslizarCarrossel(this, -1)">&#10094;</button>
+                    <button class="botao-carrossel-genero botao-esquerdo-genero"
+                        onclick="deslizarCarrossel(this, -1)">&#10094;</button>
                     <div id="todas-series" class="lista-series-populares lista-series-genero"></div>
-                    <button class="botao-carrossel-genero botao-direito-genero" onclick="deslizarCarrossel(this, 1)">&#10095;</button>
+                    <button class="botao-carrossel-genero botao-direito-genero"
+                        onclick="deslizarCarrossel(this, 1)">&#10095;</button>
                 </div>
             </section>
         </section>
 
         <section id="serie-geral" class="serie-geral">
-            
+
             <ul id="lista-series"></ul>
             <div id="loading-spinner" class="spinner"></div>
             <p id="mensagem-erro" class="erro"></p>
@@ -139,7 +159,7 @@
 
     <script src="script/script.js"></script>
 
-    
+
 </body>
 
 </html>
