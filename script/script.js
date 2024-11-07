@@ -313,6 +313,14 @@ selecionarGenero.addEventListener('click', () => {
     }
 });
 
+// Adiciona um ouvinte de evento para a rolagem da página
+window.addEventListener('scroll', () => {
+    // Verifica se a janela de gênero está visível (tem a classe .visivel)
+    if (janelaGenero.classList.contains('visivel')) {
+        // Remove a classe .visivel
+        janelaGenero.classList.remove('visivel');
+    }
+});
 
 
 
