@@ -137,7 +137,12 @@ header nav a:hover {
     font-weight: bold;
 }
 
-
+/* Config main */
+#conteudo-principal {
+    padding: 3px;
+    max-width: 1200px;
+    margin: auto;
+}
 
 /* Config Carrossel */
 .display {
@@ -204,10 +209,9 @@ header nav a:hover {
 /* Config carregamento */
 .spinner {
     position: fixed;
-    top: 300px;
-    right: 10px;
-    left: 10px;
-    display: block;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     border: 4px solid #f3f3f3;
     border-top: 4px solid #e50914;
     border-radius: 50%;
@@ -215,8 +219,8 @@ header nav a:hover {
     height: 40px;
     z-index: 20000;
     animation: spin 1s linear infinite;
-    margin: 20px auto;
 }
+
 
 @keyframes spin {
     0% {
@@ -229,7 +233,7 @@ header nav a:hover {
 }
 
 
-
+/* config carrossel por gênero */
 .container-carrossel-genero {
     display: flex;
     align-items: center;
@@ -245,7 +249,7 @@ header nav a:hover {
     display: flex;
     overflow-x: auto;
     scroll-behavior: smooth;
-    gap: 0.2rem;
+    gap: 0.5rem;
     padding: 1rem 0;
 
 }
@@ -305,32 +309,22 @@ h2 {
 }
 
 
-
+/* Config lista de séries */
 #lista-series {
     margin-top: 20px;
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap:1rem;
     justify-content: center;
 
 }
 
-#conteudo-principal {
-    padding: 2rem;
-    max-width: 1200px;
-    margin: auto;
-}
 
-/* Itens da série */
 .serie-item {
     overflow: hidden;
     width: 200px;
     transition: transform 0.3s;
     position: relative;
-}
-
-.serie-item:hover {
-    transform: scale(1.05);
 }
 
 
@@ -344,53 +338,68 @@ h2 {
 
 .serie-imagem {
     width: 100%;
-    max-width: 210px; /* Largura máxima para telas maiores */
-    height: auto; /* Manter a proporção da imagem */
+    max-width: 210px; 
+    height: auto; 
 }
 
-/* Contêiner para alinhar os botões com a imagem */
 .btn-container {
-    width: 100%; /* Garantir que o contêiner ocupe 100% da largura */
+    width: 100%; 
     display: flex;
-    flex-direction: column; /* Colocar os botões em coluna */
-    gap: 5px; /* Espaço entre os botões */
+    flex-direction: column; 
+    gap: 5px;
     align-items: center;
+    
 }
 
 /* Estilo base para os botões */
 .favoritar, .btn-detalhes {
-    width: 100%; /* Ocupa toda a largura do contêiner pai */
+    width: 100%; 
     padding: 10px; 
     font-size: 14px;
     border: none;
     cursor: pointer;
     transition: background-color 0.3s ease;
     text-align: center;
+    
 }
 
 .btn-detalhes {
     color: white;
-    background: linear-gradient(to top, #000000, #1a1a1a);
+    background: linear-gradient(to bottom, #1a1a1a, #000000 );
+    transition: transform 0.3s;
 }
 
-/* Botão "Adicionar aos Favoritos" */
+.btn-detalhes:hover {
+    background: linear-gradient(to top, #333333, #1a1a1a);
+    transform: scale(1.05);
+}
+
+
+
 .btn-adicionar {
-    background: linear-gradient(to bottom, #1e5b1e,#000);
+    background: linear-gradient(to bottom, #1e5b1e, #000);
     color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease;
 }
 
 .btn-adicionar:hover {
-    background-color: #1e5b1e;
+    background: linear-gradient(to bottom, #28a428, #1e5b1e); 
+    transform: scale(1.05); 
 }
 
-/* Botão "Remover dos Favoritos" */
+
 .btn-remover {
     background: linear-gradient(to bottom, #e50914, #000000);
     color: #fff;
+    transition: transform 0.3s ease;
 }
 
 .btn-remover:hover {
-    background-color: #b20710;
+    background: linear-gradient(to bottom, #ff1c1c, #e50914); /* Cores mais intensas no hover */
+    transform: scale(1.05);
 }
 
 /* Botão "Ver detalhes" */
@@ -457,7 +466,7 @@ h2 {
     position: relative;
     
     margin: 30px auto;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5); /* Adiciona uma sombra para destacar */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5); 
 }
 
 #detalhes-serie h2{
