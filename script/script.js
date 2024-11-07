@@ -198,7 +198,6 @@ function filtrarGenero(genero) {
 
 
 
-// Função para buscar séries
 async function buscarSeries() {
     const termoBusca = entradaBusca.value.trim();
     if (!termoBusca) return;
@@ -210,14 +209,20 @@ async function buscarSeries() {
 
         const resultados = await resposta.json();
         const seriesEncontradas = resultados.map(resultado => resultado.show);
+        
+        // Atualizar seriesPopulares com os resultados da busca
+        seriesPopulares = seriesEncontradas;
+        
         exibirSeries(seriesEncontradas);
         listaSeries.scrollIntoView({ behavior: 'smooth' });
+        
     } catch (erro) {
         exibirErro(erro.message);
     } finally {
         esconderSpinner();
     }
 }
+
 
 async function exibirDetalhesSerie(id) {
     try {
@@ -240,6 +245,7 @@ async function exibirDetalhesSerie(id) {
 
 
         modalDetalhes.style.display = "block";
+        document.body.style.overflow = 'hidden';
     } catch (erro) {
         exibirErro(erro.message);
     } finally {
@@ -282,7 +288,10 @@ entradaBusca.addEventListener("keypress", (event) => {
 });
 
 // Fechar modal de detalhes
-fecharModal.addEventListener("click", () => { modalDetalhes.style.display = "none"; });
+fecharModal.addEventListener("click", () => { 
+    modalDetalhes.style.display = "none"; 
+    document.body.style.overflow = 'auto';
+});
 
 //Exibir filtro
 iconeFiltro.addEventListener('click', () => janelaGenero.classList.toggle('visivel'));
