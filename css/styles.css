@@ -16,7 +16,7 @@ body {
 
 /* Configurações do cabeçalho */
 header {
-    background-color: #14141410;
+    background-color: #14141400;
     position: fixed;
     width: 100%;
     z-index: 99;
@@ -29,6 +29,9 @@ header h1 {
     font-size: 2rem;
     color: #e50914;
     font-weight: bold;
+    padding: 5px 20px;
+    border-radius: 10px;
+    background-color: #000;
 }
 
 header nav {
@@ -70,7 +73,7 @@ header nav a:hover {
 
 /* Janela flutuante */
 .janela-generos {
-    display: none;
+    opacity: 0;
     position: absolute;
     top: 25px;
     left: -80px;
@@ -80,11 +83,17 @@ header nav a:hover {
     z-index: 1000;
     padding: 10px;
     width: auto;
+    visibility: hidden;
+    transform: scale(1);
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 
+
 .filtro-genero:hover .janela-generos {
-    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.1);
 }
 
 
@@ -140,7 +149,7 @@ header nav a:hover {
 
 /* Config main */
 #conteudo-principal {
-    padding: 3px;
+    padding: 0 3px;
     max-width: 1200px;
     margin: auto;
 }
@@ -180,8 +189,8 @@ header nav a:hover {
 
 .carrossel-item img {
     width: 100%;
-    height: auto;
-    border-radius: 8px;
+    height: 420px;
+    border-radius:0 0 8px 8px;
 }
 
 
