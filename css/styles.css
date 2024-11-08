@@ -121,9 +121,26 @@ header nav a:hover {
 /* Config buscar */
 .barra-busca {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 10px;
 }
+
+.input-busca {
+    display: flex;
+    gap: 5px; 
+}
+
+#mensagem-aviso {
+    color: #fff;
+    background-color: #e50914;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 8px; 
+    text-align: center;
+    display: none; 
+}
+
 
 .barra-busca input {
     padding: 0.7rem;
@@ -132,6 +149,8 @@ header nav a:hover {
     border-radius: 4px;
     outline: none;
 }
+
+
 
 .barra-busca button {
     background-color: #e50914;
@@ -150,6 +169,7 @@ header nav a:hover {
     max-width: 1200px;
     margin: auto;
 }
+
 
 /* Config Carrossel */
 .display {

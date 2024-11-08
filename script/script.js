@@ -209,11 +209,13 @@ async function buscarSeries() {
         const resultados = await resposta.json();
         const seriesEncontradas = resultados.map(resultado => resultado.show);
         
-        
-        seriesPopulares = seriesEncontradas;
-        
-        exibirSeries(seriesEncontradas);
-        listaSeries.scrollIntoView({ behavior: 'smooth' });
+        if (seriesEncontradas.length === 0) {
+            exibirAviso("Nenhuma série encontrada!");
+        } else {
+            seriesPopulares = seriesEncontradas;
+            exibirSeries(seriesEncontradas);
+            listaSeries.scrollIntoView({ behavior: 'smooth' });
+        }
         
     } catch (erro) {
         exibirErro(erro.message);
@@ -221,6 +223,17 @@ async function buscarSeries() {
         esconderSpinner();
     }
 }
+
+// Aviso sobre a busca
+function exibirAviso(mensagem) {
+    const aviso = document.getElementById('mensagem-aviso');
+    aviso.textContent = mensagem;
+    aviso.style.display = 'block';
+    setTimeout(() => {
+        aviso.style.display = "none";
+    }, 3000);
+}
+
 
 
 async function exibirDetalhesSerie(id) {
