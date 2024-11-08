@@ -325,7 +325,6 @@ selecionarGenero.addEventListener('click', () => {
     }
 });
 
-
 window.addEventListener('scroll', () => {
     if (janelaGenero.classList.contains('visivel')) {
         janelaGenero.classList.remove('visivel');
