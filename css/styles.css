@@ -8,7 +8,7 @@
 
 body {
 
-    font-family:  "Roboto",Arial, sans-serif;
+    font-family: "Roboto", Arial, sans-serif;
     background-color: #141414;
     color: #e5e5e5;
     overflow-x: hidden;
@@ -190,7 +190,7 @@ header nav a:hover {
 .carrossel-item img {
     width: 100%;
     height: 420px;
-    border-radius:0 0 8px 8px;
+    border-radius: 0 0 8px 8px;
 }
 
 
@@ -314,7 +314,6 @@ img:hover {
 }
 
 h2 {
-
     text-align: center;
 }
 
@@ -411,20 +410,17 @@ h4 {
 
 .btn-remover:hover {
     background: linear-gradient(to bottom, #ff1c1c, #e50914);
-    /* Cores mais intensas no hover */
     transform: scale(1.05);
 }
 
 /* Botão "Ver detalhes" */
 .detalhes {
     background-color: #333;
-    /* Cor neutra para detalhes */
     color: #fff;
 }
 
 .detalhes:hover {
     background-color: #555;
-    /* Escurecer ao passar o mouse */
 }
 
 
@@ -527,9 +523,11 @@ h2 {
     display: none;
 
 }
+
 h2 {
     text-align: center;
 }
+
 .serie-geral {
     display: none;
 }
@@ -678,6 +676,27 @@ h2 {
 
     .botao-carrossel-genero {
         display: none;
+    }
+
+    .btn-detalhes:hover {
+        color: white;
+        background: linear-gradient(to bottom, #1a1a1a, #000000);
+        transition: transform 0.3s;
+    }
+
+    .btn-adicionar:hover {
+        background: linear-gradient(to bottom, #1e5b1e, #000);
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+
+    .btn-remover:hover {
+        background: linear-gradient(to bottom, #e50914, #000000);
+        color: #fff;
+        transition: transform 0.3s ease;
     }
 
 }

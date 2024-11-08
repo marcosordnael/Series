@@ -39,7 +39,6 @@ function mostrarItem(indice) {
     const totalItems = carrosselItems.length;
     if (indice >= totalItems) indice = 0;
     else if (indice < 0) indice = totalItems - 1;
-
     carrossel.style.transform = `translateX(-${indice * 100}%)`;
     indiceAtual = indice;
     indicadores.forEach((indicador, i) => indicador.classList.toggle('ativo', i === indiceAtual));
@@ -210,7 +209,7 @@ async function buscarSeries() {
         const resultados = await resposta.json();
         const seriesEncontradas = resultados.map(resultado => resultado.show);
         
-        // Atualizar seriesPopulares com os resultados da busca
+        
         seriesPopulares = seriesEncontradas;
         
         exibirSeries(seriesEncontradas);
@@ -313,11 +312,9 @@ selecionarGenero.addEventListener('click', () => {
     }
 });
 
-// Adiciona um ouvinte de evento para a rolagem da página
+
 window.addEventListener('scroll', () => {
-    // Verifica se a janela de gênero está visível (tem a classe .visivel)
     if (janelaGenero.classList.contains('visivel')) {
-        // Remove a classe .visivel
         janelaGenero.classList.remove('visivel');
     }
 });
