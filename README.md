@@ -1,9 +1,7 @@
 Tutorial para Executar o Projeto Localmente
 
-Para acessar o projeto localmente e garantir que ele se conecte à API para exibir os dados, siga os passos abaixo:
-
 1. Baixando o Projeto
-Primeiro, faça o download do projeto. Extraia o arquivo compactado (.zip ou .rar) em uma pasta no seu computador.
+Primeiro, faça o download do projeto. Extraia o arquivo compactado (.zip) em uma pasta no seu computador.
 
 2. Abrindo com o Visual Studio Code
 Abra o Visual Studio Code.
