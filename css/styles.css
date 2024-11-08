@@ -266,6 +266,7 @@ header nav a:hover {
     align-items: center;
     position: relative;
     overflow: hidden;
+    margin-bottom: 40px;
 }
 
 .lista-series-genero::-webkit-scrollbar {
@@ -334,10 +335,10 @@ h2 {
     text-align: center;
 }
 
-.lista-series-populares {
+/* .lista-series-populares {
     margin-bottom: 40px;
     
-}
+} */
 
 /* Config lista de séries */
 #lista-series {
