@@ -75,7 +75,7 @@ header nav a:hover {
 .janela-generos {
     display: none;
     position: absolute;
-    top: 25px;
+    top: 19px;
     left: -80px;
     background-color: rgba(24, 22, 22, 0.788);
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
