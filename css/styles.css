@@ -681,7 +681,6 @@ h2 {
     .btn-detalhes:hover {
         color: white;
         background: linear-gradient(to bottom, #1a1a1a, #000000);
-        transition: none;
         transform: none;
     }
 
@@ -690,15 +689,13 @@ h2 {
         color: #fff;
         padding: 10px 20px;
         border: none;
-        cursor: pointer;
-        transition: none;
+        cursor: pointer;     
         transform: none;
     }
 
     .btn-remover:hover {
         background: linear-gradient(to bottom, #e50914, #000000);
         color: #fff;
-        transition: none;
         transform: none;
     }
 
