@@ -318,12 +318,12 @@ botaoBusca.addEventListener('click', () => {
 
 
 selecionarGenero.addEventListener('click', () => {
-    // Alterna a visibilidade da série geral
+    
     serieGeral.classList.toggle('visivel');
     
-    if (serieGeral.classList.contains('visivel')) {
+    if (janelaGenero.classList.contains('visivel')) {
         // Oculta o botão de seleção de gênero e rola para a seção visível
-        selecionarGenero.classList.remove('visivel');
+        janelaGenero.classList.remove('visivel');
         serieGeral.scrollIntoView({ behavior: 'smooth' });
     } else {
         // Se a série geral está invisível, exibe o botão de seleção de gênero novamente

@@ -586,20 +586,36 @@ h2 {
         height: 50px;
     }
 
+    /* Janela flutuante */
     .janela-generos {
         display: none;
-        position: fixed;
-        justify-content: center;
-        justify-items: center;
-        bottom: 0px;
-        right: 10px;
-        left: 10px;
-
+        position: fixed; 
+        top: 80%; 
+        left: 20%; 
+        transform: translate(-17%, -85%); 
+        background-color: rgba(24, 22, 22, 0.788);
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        z-index: 1000;
+        padding: 20px; 
+        width: 90%; 
+        max-width: 400px; 
     }
+    
 
-    .janela-generos.visivel {
-        display: block;
-    }
+.janela-generos.visivel {
+    display: block;
+}
+
+
+
+
+/* Config buscar */
+.barra-busca {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
     .barra-busca.visivel {
         position: fixed;
