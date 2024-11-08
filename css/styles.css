@@ -89,7 +89,7 @@ header nav a:hover {
 
 .filtro-genero:hover .janela-generos {
     display: block;
-    
+
 }
 
 
@@ -127,7 +127,7 @@ header nav a:hover {
 
 .input-busca {
     display: flex;
-    gap: 5px; 
+    gap: 5px;
 }
 
 #mensagem-aviso {
@@ -136,9 +136,9 @@ header nav a:hover {
     padding: 10px;
     border-radius: 5px;
     font-weight: bold;
-    margin-top: 8px; 
+    margin-top: 8px;
     text-align: center;
-    display: none; 
+    display: none;
 }
 
 
@@ -589,33 +589,33 @@ h2 {
     /* Janela flutuante */
     .janela-generos {
         display: none;
-        position: fixed; 
-        top: 80%; 
-        left: 20%; 
-        transform: translate(-17%, -85%); 
+        position: fixed;
+        top: 80%;
+        left: 20%;
+        transform: translate(-17%, -85%);
         background-color: rgba(24, 22, 22, 0.788);
         box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
         border-radius: 5px;
         z-index: 1000;
-        padding: 20px; 
-        width: 90%; 
-        max-width: 400px; 
+        padding: 20px;
+        width: 90%;
+        max-width: 400px;
     }
-    
-
-.janela-generos.visivel {
-    display: block;
-}
 
 
+    .janela-generos.visivel {
+        display: block;
+    }
 
 
-/* Config buscar */
-.barra-busca {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+
+
+    /* Config buscar */
+    .barra-busca {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+    }
 
     .barra-busca.visivel {
         position: fixed;
@@ -725,7 +725,7 @@ h2 {
         color: #fff;
         padding: 10px 20px;
         border: none;
-        cursor: pointer;     
+        cursor: pointer;
         transform: none;
     }
 
