@@ -55,6 +55,7 @@ header nav a {
 header nav a:hover {
     transition: transform 0.5s;
     transform: scale(1.2);
+    border-bottom: solid #e50914;
 }
 
 
@@ -75,7 +76,7 @@ header nav a:hover {
 .janela-generos {
     display: none;
     position: absolute;
-    top: 19px;
+    top: 24px;
     left: -80px;
     background-color: rgba(24, 22, 22, 0.788);
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
@@ -117,6 +118,7 @@ header nav a:hover {
 .janela-generos li:hover {
     background-color: #e0e0e0;
 }
+
 
 /* Config buscar */
 .barra-busca {
